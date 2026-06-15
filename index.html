@@ -293,7 +293,6 @@ dateText.textContent = CONFIG.dateText;
 timeText.textContent = CONFIG.timeText;
 venue.innerHTML = CONFIG.venue;
 mapBtn.href = CONFIG.mapUrl;
-if(CONFIG.musicUrl){ audio.querySelector('source').src = CONFIG.musicUrl; audio.load(); }
 
 /* ---- календарь строится автоматически из даты ---- */
 (function buildCal(){
@@ -317,6 +316,7 @@ if(CONFIG.musicUrl){ audio.querySelector('source').src = CONFIG.musicUrl; audio.
 
 /* ---- музыка ---- */
 const audio=document.getElementById('audio');
+if(CONFIG.musicUrl){ audio.querySelector('source').src = CONFIG.musicUrl; audio.load(); }
 const mBtn=document.getElementById('music'), mIco=document.getElementById('musicIco');
 mBtn.addEventListener('click',()=>{
   if(audio.paused){ audio.play().catch(()=>{}); mBtn.classList.remove('paused'); mIco.textContent='❚❚'; }
